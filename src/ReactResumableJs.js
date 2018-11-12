@@ -16,6 +16,7 @@ export default class ReactResumableJs extends React.Component {
         this.state = {
             progressBar: 0,
             messageStatus: '',
+            messageErrorStatus: '',
             fileList: {files: []},
             isPaused: false,
             isUploading: false
@@ -129,7 +130,7 @@ export default class ReactResumableJs extends React.Component {
                     this.setState({
                         progressBar: 0
                     })
-                }, 500);
+                }, 1500);
             }
 
         });
@@ -302,7 +303,16 @@ export default class ReactResumableJs extends React.Component {
                     <div className="progress-bar" style={{width: this.state.progressBar + '%'}}></div>
                 </div>
                 <div>
-                    <div>{this.state.messageStatus}</div>
+                    <div style={{
+                        fontSize: "20px",
+                        width: "100%",
+                        margin: "10px",
+                        backgroundColor: "lightgreen",
+                        color: "green",
+                        border: "1px solid green",
+                        textAlign: "center",
+                        padding: "2px"
+                    }}>{this.state.messageStatus}</div>
                 </div>
 
                 {fileList}
