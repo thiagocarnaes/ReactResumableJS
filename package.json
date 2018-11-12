@@ -12,7 +12,7 @@
     "prepublish": "gulp build",
     "test": "mocha --compilers js:babel-register --ui bdd ./test/resumableTest.js",
     "demo": "cd example && npm start",
-    "prepare": "npm install && gulp build"
+    "prepare": "npm install"
   },
   "repository": {
     "type": "git",
