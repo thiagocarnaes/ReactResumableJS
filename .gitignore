@@ -29,7 +29,6 @@ node_modules
 # Bower
 bower_components/
 .idea/
-build/
 /yarn.lock
 
 package-lock.json
