@@ -141,7 +141,7 @@ var ReactResumableJs = function (_React$Component) {
                         _this.setState({
                             progressBar: 0
                         });
-                    }, 500);
+                    }, 1500);
                 }
             });
 
@@ -308,6 +308,7 @@ var ReactResumableJs = function (_React$Component) {
         _this.state = {
             progressBar: 0,
             messageStatus: '',
+            messageErrorStatus: '',
             fileList: { files: [] },
             isPaused: false,
             isUploading: false
@@ -416,7 +417,16 @@ var ReactResumableJs = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "div",
-                        null,
+                        { style: {
+                                fontSize: "20px",
+                                width: "100%",
+                                margin: "10px",
+                                backgroundColor: "lightgreen",
+                                color: "green",
+                                border: "1px solid green",
+                                textAlign: "center",
+                                padding: "2px"
+                            } },
                         this.state.messageStatus
                     )
                 ),
