@@ -314,7 +314,7 @@ export default class ReactResumableJs extends React.Component {
                     <div className="progress-bar" style={{width: this.state.progressBar + '%'}}></div>
                 </div>
                 <div>
-                    <div style={this.state.messageStatus != '' ? classMessageStatus : ''}>{this.state.messageStatus}</div>
+                    <div style={this.state.messageStatus != '' ? classMessageStatus : {}}>{this.state.messageStatus}</div>
                 </div>
 
                 {fileList}

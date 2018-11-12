@@ -428,7 +428,7 @@ var ReactResumableJs = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "div",
-                        { style: this.state.messageStatus != '' ? classMessageStatus : '' },
+                        { style: this.state.messageStatus != '' ? classMessageStatus : {} },
                         this.state.messageStatus
                     )
                 ),
