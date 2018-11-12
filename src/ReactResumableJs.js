@@ -131,8 +131,7 @@ export default class ReactResumableJs extends React.Component {
             } else {
                 setTimeout(() => {
                     this.setState({
-                        progressBar: 0,
-                        isComplete: false
+                        progressBar: 0
                     })
                 }, 1500);
             }

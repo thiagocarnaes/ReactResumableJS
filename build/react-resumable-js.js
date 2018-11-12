@@ -141,8 +141,7 @@ var ReactResumableJs = function (_React$Component) {
                 } else {
                     setTimeout(function () {
                         _this.setState({
-                            progressBar: 0,
-                            isComplete: false
+                            progressBar: 0
                         });
                     }, 1500);
                 }
