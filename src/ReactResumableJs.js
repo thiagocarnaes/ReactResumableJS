@@ -129,7 +129,7 @@ export default class ReactResumableJs extends React.Component {
                     this.setState({
                         progressBar: 0
                     })
-                }, 1000);
+                }, 500);
             }
 
         });
