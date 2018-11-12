@@ -117,7 +117,7 @@ var ReactResumableJs = function (_React$Component) {
 
                 _this.setState({
                     fileList: { files: currentFiles },
-                    messageStatus: _this.props.completedMessage + ' ' + file.fileName || fileServer
+                    messageStatus: _this.props.completedMessage || fileServer
                 });
 
                 if (typeof _this.props.onFileSuccess === "function") {
@@ -141,7 +141,7 @@ var ReactResumableJs = function (_React$Component) {
                         _this.setState({
                             progressBar: 0
                         });
-                    }, 1000);
+                    }, 500);
                 }
             });
 
