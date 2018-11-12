@@ -19,7 +19,8 @@ export default class ReactResumableJs extends React.Component {
             messageErrorStatus: '',
             fileList: {files: []},
             isPaused: false,
-            isUploading: false
+            isUploading: false,
+            isComplete: false
         };
 
         this.resumable = null;
@@ -105,7 +106,8 @@ export default class ReactResumableJs extends React.Component {
 
             this.setState({
                 fileList: {files: currentFiles},
-                messageStatus: this.props.completedMessage || fileServer
+                messageStatus: this.props.completedMessage || fileServer,
+                isComplete: true
             });
 
             if (typeof this.props.onFileSuccess === "function") {                    
@@ -123,12 +125,14 @@ export default class ReactResumableJs extends React.Component {
             if ((ResumableField.progress() * 100) < 100) {
                 this.setState({
                     messageStatus: parseInt(ResumableField.progress() * 100, 10) + '%',
-                    progressBar: ResumableField.progress() * 100
+                    progressBar: ResumableField.progress() * 100,
+                    isComplete: false
                 });
             } else {
                 setTimeout(() => {
                     this.setState({
-                        progressBar: 0
+                        progressBar: 0,
+                        isComplete: false
                     })
                 }, 1500);
             }
@@ -285,15 +289,19 @@ export default class ReactResumableJs extends React.Component {
             else pauseButton = this.props.pauseButton
         }
 
-        let classMessageStatus = {
-            fontSize: "20px",
-            width: "100%",
-            margin: "10px",
-            backgroundColor: "lightgreen",
-            color: "green",
-            border: "1px solid green",
-            textAlign: "center",
-            padding: "2px"
+        let classMessageStatus = {}
+        
+        if (this.state.isComplete) {
+            classMessageStatus = {
+                fontSize: "20px",
+                width: "100%",
+                margin: "10px",
+                backgroundColor: "lightgreen",
+                color: "green",
+                border: "1px solid green",
+                textAlign: "center",
+                padding: "2px"
+            }
         }
 
         return (
@@ -314,7 +322,7 @@ export default class ReactResumableJs extends React.Component {
                     <div className="progress-bar" style={{width: this.state.progressBar + '%'}}></div>
                 </div>
                 <div>
-                    <div style={this.state.messageStatus != '' ? classMessageStatus : {}}>{this.state.messageStatus}</div>
+                    <div style={classMessageStatus}>{this.state.messageStatus}</div>
                 </div>
 
                 {fileList}
