@@ -30,7 +30,7 @@ node_modules
 bower_components/
 .idea/
 build/
-example/
 /yarn.lock
 
 package-lock.json
+example
