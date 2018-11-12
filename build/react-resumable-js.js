@@ -117,7 +117,8 @@ var ReactResumableJs = function (_React$Component) {
 
                 _this.setState({
                     fileList: { files: currentFiles },
-                    messageStatus: _this.props.completedMessage || fileServer
+                    messageStatus: _this.props.completedMessage || fileServer,
+                    isComplete: true
                 });
 
                 if (typeof _this.props.onFileSuccess === "function") {
@@ -134,12 +135,14 @@ var ReactResumableJs = function (_React$Component) {
                 if (ResumableField.progress() * 100 < 100) {
                     _this.setState({
                         messageStatus: parseInt(ResumableField.progress() * 100, 10) + '%',
-                        progressBar: ResumableField.progress() * 100
+                        progressBar: ResumableField.progress() * 100,
+                        isComplete: false
                     });
                 } else {
                     setTimeout(function () {
                         _this.setState({
-                            progressBar: 0
+                            progressBar: 0,
+                            isComplete: false
                         });
                     }, 1500);
                 }
@@ -311,7 +314,8 @@ var ReactResumableJs = function (_React$Component) {
             messageErrorStatus: '',
             fileList: { files: [] },
             isPaused: false,
-            isUploading: false
+            isUploading: false,
+            isComplete: false
         };
 
         _this.resumable = null;
@@ -385,16 +389,20 @@ var ReactResumableJs = function (_React$Component) {
                 );else pauseButton = this.props.pauseButton;
             }
 
-            var classMessageStatus = {
-                fontSize: "20px",
-                width: "100%",
-                margin: "10px",
-                backgroundColor: "lightgreen",
-                color: "green",
-                border: "1px solid green",
-                textAlign: "center",
-                padding: "2px"
-            };
+            var classMessageStatus = {};
+
+            if (this.state.isComplete) {
+                classMessageStatus = {
+                    fontSize: "20px",
+                    width: "100%",
+                    margin: "10px",
+                    backgroundColor: "lightgreen",
+                    color: "green",
+                    border: "1px solid green",
+                    textAlign: "center",
+                    padding: "2px"
+                };
+            }
 
             return _react2.default.createElement(
                 "div",
@@ -428,7 +436,7 @@ var ReactResumableJs = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "div",
-                        { style: this.state.messageStatus != '' ? classMessageStatus : {} },
+                        { style: classMessageStatus },
                         this.state.messageStatus
                     )
                 ),
