@@ -11,7 +11,8 @@
   "scripts": {
     "prepublish": "gulp build",
     "test": "mocha --compilers js:babel-register --ui bdd ./test/resumableTest.js",
-    "demo": "cd example && npm start"
+    "demo": "cd example && npm start",
+    "prepare": "npm install && gulp build"
   },
   "repository": {
     "type": "git",
