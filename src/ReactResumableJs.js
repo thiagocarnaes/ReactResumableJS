@@ -78,6 +78,8 @@ export default class ReactResumableJs extends React.Component {
 
         ResumableField.on('fileSuccess', (file, fileServer) => {
 
+            //console.log(file.isComplete(), fileServer);
+
             if (this.props.fileNameServer) {
                 let objectServer = JSON.parse(fileServer);
                 file.fileName = objectServer[this.props.fileNameServer];
@@ -88,14 +90,26 @@ export default class ReactResumableJs extends React.Component {
             let currentFiles = this.state.fileList.files;
             currentFiles.push(file);
 
+            //console.log(typeof this.props.onFileSuccess)
+
+            // this.setState({
+            //     fileList: {files: currentFiles},
+            //     messageStatus: this.props.completedMessage + ' ' + file.fileName || fileServer
+            // }, () => {
+            //     if (typeof this.props.onFileSuccess === "function") {
+                    
+            //         this.props.onFileSuccess(file, fileServer);
+            //     }
+            // });
+
             this.setState({
                 fileList: {files: currentFiles},
-                messageStatus: this.props.completedMessage + file.fileName || fileServer
-            }, () => {
-                if (typeof this.props.onFileSuccess === "function") {
-                    this.props.onFileSuccess(file, fileServer);
-                }
+                messageStatus: this.props.completedMessage + ' ' + file.fileName || fileServer
             });
+
+            if (typeof this.props.onFileSuccess === "function") {                    
+                this.props.onFileSuccess(file, fileServer);
+            }
         });
 
         ResumableField.on('progress', () => {
@@ -286,6 +300,9 @@ export default class ReactResumableJs extends React.Component {
                 </label>
                 <div className="progress" style={{display: this.state.progressBar === 0 ? "none" : "block"}}>
                     <div className="progress-bar" style={{width: this.state.progressBar + '%'}}></div>
+                </div>
+                <div>
+                    <div>{this.state.messageStatus}</div>
                 </div>
 
                 {fileList}
