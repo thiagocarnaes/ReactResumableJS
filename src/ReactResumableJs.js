@@ -104,7 +104,7 @@ export default class ReactResumableJs extends React.Component {
 
             this.setState({
                 fileList: {files: currentFiles},
-                messageStatus: this.props.completedMessage + ' ' + file.fileName || fileServer
+                messageStatus: this.props.completedMessage || fileServer
             });
 
             if (typeof this.props.onFileSuccess === "function") {                    
