@@ -285,6 +285,17 @@ export default class ReactResumableJs extends React.Component {
             else pauseButton = this.props.pauseButton
         }
 
+        let classMessageStatus = {
+            fontSize: "20px",
+            width: "100%",
+            margin: "10px",
+            backgroundColor: "lightgreen",
+            color: "green",
+            border: "1px solid green",
+            textAlign: "center",
+            padding: "2px"
+        }
+
         return (
             <div id={this.props.dropTargetID} ref={node => this.dropZone = node}>
                 {previousText}
@@ -303,16 +314,7 @@ export default class ReactResumableJs extends React.Component {
                     <div className="progress-bar" style={{width: this.state.progressBar + '%'}}></div>
                 </div>
                 <div>
-                    <div style={{
-                        fontSize: "20px",
-                        width: "100%",
-                        margin: "10px",
-                        backgroundColor: "lightgreen",
-                        color: "green",
-                        border: "1px solid green",
-                        textAlign: "center",
-                        padding: "2px"
-                    }}>{this.state.messageStatus}</div>
+                    <div style={this.state.messageStatus != '' ? classMessageStatus : ''}>{this.state.messageStatus}</div>
                 </div>
 
                 {fileList}

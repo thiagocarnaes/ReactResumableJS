@@ -385,6 +385,17 @@ var ReactResumableJs = function (_React$Component) {
                 );else pauseButton = this.props.pauseButton;
             }
 
+            var classMessageStatus = {
+                fontSize: "20px",
+                width: "100%",
+                margin: "10px",
+                backgroundColor: "lightgreen",
+                color: "green",
+                border: "1px solid green",
+                textAlign: "center",
+                padding: "2px"
+            };
+
             return _react2.default.createElement(
                 "div",
                 { id: this.props.dropTargetID, ref: function ref(node) {
@@ -417,16 +428,7 @@ var ReactResumableJs = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         "div",
-                        { style: {
-                                fontSize: "20px",
-                                width: "100%",
-                                margin: "10px",
-                                backgroundColor: "lightgreen",
-                                color: "green",
-                                border: "1px solid green",
-                                textAlign: "center",
-                                padding: "2px"
-                            } },
+                        { style: this.state.messageStatus != '' ? classMessageStatus : '' },
                         this.state.messageStatus
                     )
                 ),
