@@ -191,13 +191,9 @@ var ReactResumableJs = function (_React$Component) {
                             { id: "media_" + uniqID },
                             media
                         ),
-                        _react2.default.createElement(
-                            "a",
-                            { onClick: function onClick(event) {
-                                    return _this.removeFile(event, file, index);
-                                }, href: "#" },
-                            "[X]"
-                        )
+                        _react2.default.createElement("a", { onClick: function onClick(event) {
+                                return _this.removeFile(event, file, index);
+                            }, href: "#" })
                     );
                 } else if (file.file.type.indexOf('image') > -1) {
                     if (_this.props.tmpDir !== "") {
@@ -211,13 +207,9 @@ var ReactResumableJs = function (_React$Component) {
                                 { id: "media_" + uniqID },
                                 media
                             ),
-                            _react2.default.createElement(
-                                "a",
-                                { onClick: function onClick(event) {
-                                        return _this.removeFile(event, file, index);
-                                    }, href: "#" },
-                                "[X]"
-                            )
+                            _react2.default.createElement("a", { onClick: function onClick(event) {
+                                    return _this.removeFile(event, file, index);
+                                }, href: "#" })
                         );
                     } else {
                         var fileReader = new FileReader();
@@ -230,13 +222,9 @@ var ReactResumableJs = function (_React$Component) {
                             "li",
                             { className: "thumbnail", key: uniqID },
                             _react2.default.createElement("label", { id: "media_" + uniqID }),
-                            _react2.default.createElement(
-                                "a",
-                                { onClick: function onClick(event) {
-                                        return _this.removeFile(event, file, index);
-                                    }, href: "#" },
-                                "[X]"
-                            )
+                            _react2.default.createElement("a", { onClick: function onClick(event) {
+                                    return _this.removeFile(event, file, index);
+                                }, href: "#" })
                         );
                     }
                 } else {
@@ -253,13 +241,9 @@ var ReactResumableJs = function (_React$Component) {
                             { id: "media_" + uniqID },
                             media
                         ),
-                        _react2.default.createElement(
-                            "a",
-                            { onClick: function onClick(event) {
-                                    return _this.removeFile(event, file, index);
-                                }, href: "#" },
-                            "[X]"
-                        )
+                        _react2.default.createElement("a", { onClick: function onClick(event) {
+                                return _this.removeFile(event, file, index);
+                            }, href: "#" })
                     );
                 }
             });
