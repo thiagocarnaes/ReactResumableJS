@@ -172,7 +172,7 @@ export default class ReactResumableJs extends React.Component {
                 media = <label className="video">{originFile.name}</label>;
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
-                    <a onClick={(event) => this.removeFile(event, file, index)} href="#">[X]</a>
+                    <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>
                 </li>;
             }
             else if (file.file.type.indexOf('image') > -1) if (this.props.tmpDir !== "") {
@@ -180,7 +180,7 @@ export default class ReactResumableJs extends React.Component {
                 media = <img className="image" width="80" src={src} alt=""/>;
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
-                    <a onClick={(event) => this.removeFile(event, file, index)} href="#">[X]</a>
+                    <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>
                 </li>;
 
             } else {
@@ -192,13 +192,13 @@ export default class ReactResumableJs extends React.Component {
                 };
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}/>
-                    <a onClick={(event) => this.removeFile(event, file, index)} href="#">[X]</a>
+                    <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>
                 </li>;
             } else {
                 media = <label className="document">{originFile.name}</label>;
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
-                    <a onClick={(event) => this.removeFile(event, file, index)} href="#">[X]</a>
+                    <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>
                 </li>;
             }
         });
