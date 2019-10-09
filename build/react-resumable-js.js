@@ -180,7 +180,11 @@ var ReactResumableJs = function (_React$Component) {
 
                 var dataFile = JSON.parse(file.fileName);
 
-                var optionsButtons = '';
+                var optionsButtons = function optionsButtons() {
+                    if (dataFile.status_id == 0) {
+                        return _this.props.fileActions;
+                    }
+                };
 
                 if (file.file.type.indexOf('video') > -1) {
                     media = _react2.default.createElement(
@@ -238,7 +242,7 @@ var ReactResumableJs = function (_React$Component) {
                         { className: "document" },
                         dataFile.name
                     );
-                    _this.props.fileActions.ocr();
+                    // .ocr()
                     return _react2.default.createElement(
                         "li",
                         { className: "thumbnail", key: uniqID },
@@ -250,16 +254,7 @@ var ReactResumableJs = function (_React$Component) {
                         _react2.default.createElement("a", { onClick: function onClick(event) {
                                 return _this.removeFile(event, file, index);
                             }, href: "#" }),
-                        _react2.default.createElement(
-                            "a",
-                            { href: "#" },
-                            "Validar com OCR"
-                        ),
-                        _react2.default.createElement(
-                            "a",
-                            { href: "#" },
-                            "Escolher escola"
-                        )
+                        _this.optionsButtons()
                     );
                 }
             });
