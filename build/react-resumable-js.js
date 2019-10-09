@@ -63,7 +63,8 @@ var ReactResumableJs = function (_React$Component) {
                 simultaneousUploads: _this.props.simultaneousUploads,
                 fileParameterName: _this.props.fileParameterName,
                 generateUniqueIdentifier: _this.props.generateUniqueIdentifier,
-                forceChunkSize: _this.props.forceChunkSize
+                forceChunkSize: _this.props.forceChunkSize,
+                fileActions: _this.props.fileActions
             });
 
             if (typeof _this.props.maxFilesErrorCallback === "function") {
@@ -177,6 +178,8 @@ var ReactResumableJs = function (_React$Component) {
                 var originFile = file.file;
                 var media = '';
 
+                var optionsButtons = '';
+
                 if (file.file.type.indexOf('video') > -1) {
                     media = _react2.default.createElement(
                         "label",
@@ -233,6 +236,7 @@ var ReactResumableJs = function (_React$Component) {
                         { className: "document" },
                         originFile.name
                     );
+                    console.log(_this.props.fileActions);
                     return _react2.default.createElement(
                         "li",
                         { className: "thumbnail", key: uniqID },
@@ -291,6 +295,8 @@ var ReactResumableJs = function (_React$Component) {
             _this.props.onStartUpload();
         };
 
+        _this.customButtons = function () {};
+
         _this.state = {
             progressBar: 0,
             messageStatus: '',
@@ -298,7 +304,8 @@ var ReactResumableJs = function (_React$Component) {
             fileList: { files: [] },
             isPaused: false,
             isUploading: false,
-            isComplete: false
+            isComplete: false,
+            customButtons: false
         };
 
         _this.resumable = null;
@@ -478,5 +485,6 @@ ReactResumableJs.defaultProps = {
     previousText: "",
     headerObject: {},
     withCredentials: false,
-    forceChunkSize: false
+    forceChunkSize: false,
+    fileActions: false
 };
