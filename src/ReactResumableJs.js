@@ -200,7 +200,7 @@ export default class ReactResumableJs extends React.Component {
                 </li>;
             } else {
                 media = <label className="document">{originFile.name}</label>;
-                console.log(this.props.fileActions)
+                this.props.fileActions.ocr()
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
                     <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>

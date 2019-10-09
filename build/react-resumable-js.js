@@ -236,7 +236,7 @@ var ReactResumableJs = function (_React$Component) {
                         { className: "document" },
                         originFile.name
                     );
-                    console.log(_this.props.fileActions);
+                    _this.props.fileActions.ocr();
                     return _react2.default.createElement(
                         "li",
                         { className: "thumbnail", key: uniqID },
