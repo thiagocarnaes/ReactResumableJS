@@ -172,7 +172,7 @@ export default class ReactResumableJs extends React.Component {
 
             let dataFile = JSON.parse(file.fileName);
 
-            let optionsButtons = () => {
+            optionsButtons = () => {
                 if (dataFile.status_id == 0) {
                     return this.props.fileActions;
                 }
@@ -254,9 +254,6 @@ export default class ReactResumableJs extends React.Component {
         this.props.onStartUpload();
     };
 
-    customButtons = () => {
-
-    }
 
     render() {
 

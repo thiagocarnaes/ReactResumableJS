@@ -180,7 +180,7 @@ var ReactResumableJs = function (_React$Component) {
 
                 var dataFile = JSON.parse(file.fileName);
 
-                var optionsButtons = function optionsButtons() {
+                optionsButtons = function optionsButtons() {
                     if (dataFile.status_id == 0) {
                         return _this.props.fileActions;
                     }
@@ -301,8 +301,6 @@ var ReactResumableJs = function (_React$Component) {
             });
             _this.props.onStartUpload();
         };
-
-        _this.customButtons = function () {};
 
         _this.state = {
             progressBar: 0,
