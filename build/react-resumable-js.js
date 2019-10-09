@@ -249,7 +249,17 @@ var ReactResumableJs = function (_React$Component) {
                         ),
                         _react2.default.createElement("a", { onClick: function onClick(event) {
                                 return _this.removeFile(event, file, index);
-                            }, href: "#" })
+                            }, href: "#" }),
+                        _react2.default.createElement(
+                            "a",
+                            { href: "#" },
+                            "Validar com OCR"
+                        ),
+                        _react2.default.createElement(
+                            "a",
+                            { href: "#" },
+                            "Escolher escola"
+                        )
                     );
                 }
             });

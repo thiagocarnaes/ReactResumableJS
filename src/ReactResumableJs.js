@@ -206,6 +206,8 @@ export default class ReactResumableJs extends React.Component {
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
                     <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>
+                    <a href="#">Validar com OCR</a>
+                    <a href="#">Escolher escola</a>
                 </li>;
             }
         });
