@@ -178,6 +178,8 @@ var ReactResumableJs = function (_React$Component) {
                 var originFile = file.file;
                 var media = '';
 
+                console.log(file);
+
                 var optionsButtons = '';
 
                 if (file.file.type.indexOf('video') > -1) {

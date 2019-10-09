@@ -170,6 +170,8 @@ export default class ReactResumableJs extends React.Component {
             let originFile = file.file;
             let media = '';
 
+            console.log(file)
+
             let optionsButtons = '';
 
             if (file.file.type.indexOf('video') > -1) {
