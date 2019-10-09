@@ -178,7 +178,7 @@ var ReactResumableJs = function (_React$Component) {
                 var originFile = file.file;
                 var media = '';
 
-                console.log(JSON.parse(file.fileName));
+                var dataFile = JSON.parse(file.fileName);
 
                 var optionsButtons = '';
 
@@ -236,7 +236,7 @@ var ReactResumableJs = function (_React$Component) {
                     media = _react2.default.createElement(
                         "label",
                         { className: "document" },
-                        originFile.name
+                        dataFile.name
                     );
                     _this.props.fileActions.ocr();
                     return _react2.default.createElement(

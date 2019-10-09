@@ -170,7 +170,7 @@ export default class ReactResumableJs extends React.Component {
             let originFile = file.file;
             let media = '';
 
-            console.log(JSON.parse(file.fileName))
+            let dataFile = JSON.parse(file.fileName);
 
             let optionsButtons = '';
 
@@ -201,7 +201,7 @@ export default class ReactResumableJs extends React.Component {
                     <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>
                 </li>;
             } else {
-                media = <label className="document">{originFile.name}</label>;
+                media = <label className="document">{dataFile.name}</label>;
                 this.props.fileActions.ocr()
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
