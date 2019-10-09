@@ -164,7 +164,7 @@ export default class ReactResumableJs extends React.Component {
 
     optionsButtons = (dataFile) => {
         if (dataFile.status_id == 0) {
-            return this.props.fileActions;
+            this.props.fileActions();
         }
     };
 

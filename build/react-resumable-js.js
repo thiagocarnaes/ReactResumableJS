@@ -172,7 +172,7 @@ var ReactResumableJs = function (_React$Component) {
 
         _this.optionsButtons = function (dataFile) {
             if (dataFile.status_id == 0) {
-                return _this.props.fileActions;
+                _this.props.fileActions();
             }
         };
 
