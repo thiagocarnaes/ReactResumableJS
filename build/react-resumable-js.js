@@ -178,7 +178,7 @@ var ReactResumableJs = function (_React$Component) {
                 var originFile = file.file;
                 var media = '';
 
-                console.log(file);
+                console.log(JSON.parse(file.fileName));
 
                 var optionsButtons = '';
 

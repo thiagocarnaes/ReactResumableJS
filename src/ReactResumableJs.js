@@ -170,7 +170,7 @@ export default class ReactResumableJs extends React.Component {
             let originFile = file.file;
             let media = '';
 
-            console.log(file)
+            console.log(JSON.parse(file.fileName))
 
             let optionsButtons = '';
 
