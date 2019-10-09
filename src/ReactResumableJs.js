@@ -162,6 +162,12 @@ export default class ReactResumableJs extends React.Component {
         this.resumable.removeFile(file);
     };
 
+    optionsButtons = (dataFile) => {
+        if (dataFile.status_id == 0) {
+            return this.props.fileActions;
+        }
+    };
+
     createFileList = () => {
 
         let markup = this.state.fileList.files.map((file, index) => {
@@ -172,11 +178,7 @@ export default class ReactResumableJs extends React.Component {
 
             let dataFile = JSON.parse(file.fileName);
 
-            optionsButtons = () => {
-                if (dataFile.status_id == 0) {
-                    return this.props.fileActions;
-                }
-            };
+            
 
             if (file.file.type.indexOf('video') > -1) {
                 media = <label className="video">{originFile.name}</label>;
@@ -210,7 +212,7 @@ export default class ReactResumableJs extends React.Component {
                 return <li className="thumbnail" key={uniqID}>
                     <label id={"media_" + uniqID}>{media}</label>
                     <a onClick={(event) => this.removeFile(event, file, index)} href="#"></a>
-                    {this.optionsButtons()}
+                    {this.optionsButtons(dataFile)}
                 </li>;
             }
         });

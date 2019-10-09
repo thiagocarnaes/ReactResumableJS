@@ -170,6 +170,12 @@ var ReactResumableJs = function (_React$Component) {
             _this.resumable.removeFile(file);
         };
 
+        _this.optionsButtons = function (dataFile) {
+            if (dataFile.status_id == 0) {
+                return _this.props.fileActions;
+            }
+        };
+
         _this.createFileList = function () {
 
             var markup = _this.state.fileList.files.map(function (file, index) {
@@ -179,12 +185,6 @@ var ReactResumableJs = function (_React$Component) {
                 var media = '';
 
                 var dataFile = JSON.parse(file.fileName);
-
-                optionsButtons = function optionsButtons() {
-                    if (dataFile.status_id == 0) {
-                        return _this.props.fileActions;
-                    }
-                };
 
                 if (file.file.type.indexOf('video') > -1) {
                     media = _react2.default.createElement(
@@ -254,7 +254,7 @@ var ReactResumableJs = function (_React$Component) {
                         _react2.default.createElement("a", { onClick: function onClick(event) {
                                 return _this.removeFile(event, file, index);
                             }, href: "#" }),
-                        _this.optionsButtons()
+                        _this.optionsButtons(dataFile)
                     );
                 }
             });
